@@ -18,15 +18,19 @@ Após inicializar o projeto, o arquivo package.json será criado. Lá vão ficar
 
 Instale o TypeScript utilizando o comando abaixo, aproveitando para instalar outras dependências:
 
+```
 yarn add typescript jest @types/jest ts-node ts-jest
+```
 
 Você também pode utilizar o npm
-
+```
 npm install typescript jest @types/jest ts-node ts-jest
+```
 
 Depois disso, crie o arquivo tsconfig.json:
-
+```
 npx tsc --init
+```
 
 Com isso, o arquivo tsconfig.js deve ter sido criado e estamos prontos para começar.
 
@@ -34,8 +38,9 @@ Com isso, o arquivo tsconfig.js deve ter sido criado e estamos prontos para come
 ## Configuração do Jest
 
 Configure o Jest utilizando o comando abaixo:
-
+```
 npx ts-jest config:init
+```
 
 
 
@@ -45,7 +50,7 @@ O TypeScript tem um compilador que faz a conversão do código para JavaScript. 
 
 ### tsconfig.json
 
-
+```
 {
     "compilerOptions": {
     "incremental": true,
@@ -60,6 +65,8 @@ O TypeScript tem um compilador que faz a conversão do código para JavaScript. 
         "test"
     ]
 }
+```
+
 
 
 Fique totalmente à vontade para configurar de forma diferente, conforme as preferências que você já esteja acostumado.
@@ -71,17 +78,19 @@ Pronto, agora crie uma pasta chamada src e test dentro delas crie dois arquivos:
 
 ### Circle.test.ts
 
-
+```
 import Circle from "../src/Circle";
 
 test("Should calculate the area of circle", function () {
     const circle = new Circle(2);
     expect(circle.getArea()).toBe(12.566370614359172);
 });
+```
+
 
 ### Circle.ts
 
-
+```
 export default class Circle {
 
    constructor (readonly radius: number) {
@@ -91,9 +100,14 @@ export default class Circle {
         return 2 * Math.PI * this.radius;
     }
 }
+```
+
 
 Agora basta executar:
 
+```
 npx jest
+```
+
 
 Se os testes tiverem sido executados com sucesso está tudo pronto!
